@@ -212,7 +212,6 @@ def determine_season():
         print(f"'{month_input}' is not a valid month abbreviation.")
         return
     
-    # Prompt for day and validate
     day_input = input("Enter the day of the month: ").strip()
     try:
         day = int(day_input)
@@ -223,8 +222,7 @@ def determine_season():
     if day < 1 or day > 31:
         print("Day must be between 1 and 31.")
         return
-    
-    # Determine season
+   
     if month_lower in ("jan", "feb"):
         season = "Winter"
     elif month_lower == "mar":
@@ -242,7 +240,6 @@ def determine_season():
     else:  # month_lower == "dec"
         season = "Fall" if day <= 20 else "Winter"
     
-    # Normalize month display to Title case (e.g., "mar" → "Mar")
     month_fmt = month_lower.capitalize()
     print(f"{month_fmt} {day} is in {season}.")
 
